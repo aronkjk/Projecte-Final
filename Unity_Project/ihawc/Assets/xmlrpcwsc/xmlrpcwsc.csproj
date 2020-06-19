@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <AssemblyTitle>XmlRpc Web Service Client</AssemblyTitle>
+    <AssemblyCompany></AssemblyCompany>
+    <AssemblyVersion>1.4.0</AssemblyVersion>
+    <Product>xmlrpcwsc</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.4.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net35;net45</TargetFrameworks>
+    <OutputPath>..\build</OutputPath>
+  </PropertyGroup>
+
+</Project>

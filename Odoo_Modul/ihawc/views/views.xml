@@ -1,0 +1,151 @@
+<odoo>
+  <data>
+    
+    
+    <record model="ir.ui.view" id="ihawc.player_search">
+      <field name="name">player search</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="game_user"/>
+          <field name="game_coins"/>
+          <field name="skins"/>
+          <filter name="is_player" domain="[('is_player','=',True)]"/>
+        </search>
+      </field>
+    </record>
+
+                                          <!--Action Window para res.partner-->
+    <record model="ir.actions.act_window" id="ihawc.action_player_partner_window">
+      <field name="name">Partners</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+                                          <!--Action Window-->
+    <record model="ir.actions.act_window" id="ihawc.action_player_window">
+      <field name="name">Players</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,kanban,form</field>
+      <field name="search_view_id" ref="ihawc.player_search"/>
+      <field name="context">{'default_is_player': True}</field>
+      <field name="domain">[('is_player','=',True)]</field>
+    </record>
+
+                                           <!--Tree-->
+    <record model="ir.ui.view" id="ihawc.players_list">
+      <field name="name">players list</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="game_user"/>
+          <field name="game_coins" widget="many2many_tags"/>
+        </tree>
+      </field>
+    </record>
+
+        <!--((((((((((((((((((((())))))))))))))))))))-WELL-(((((((((((((((((((()))))))))))))))))))))-->
+                                                   <!--Form-->
+    <record model="ir.ui.view" id="ihawc.player_form">
+      <field name="name">player Form</field>
+      <field name="model">res.partner</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group string="Player">
+                <field name="is_player"/>
+                <field name="name"/>
+                <field name="game_coins"/>
+                <field name="skins"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+                          <!--Form res.partner-->
+    <record model="ir.ui.view" id="ihawc.player_partner_form">
+      <field name="name">Player Partner Form</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <data>
+          <field name="company_type" position="before">
+            <field name="is_player" string="Is a Player"/>
+          </field>
+          <notebook position="inside">
+            <page string="Player">
+              <sheet>
+                <group>
+                  <group string="Player">
+                    <field name="is_player"/>
+                    <field name="game_user"/>
+                    <field name="game_coins"/>
+                    <field name="skins"/>
+                    <field name="user_pass"/>
+                  </group>
+                </group>
+              </sheet>
+            </page>
+          </notebook>
+        </data>
+      </field>
+    </record>
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="ihawc.list">
+      <field name="name">ihawc list</field>
+      <field name="model">ihawc.ihawc</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="ihawc.action_window">
+      <field name="name">ihawc window</field>
+      <field name="res_model">ihawc.ihawc</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="ihawc.action_server">
+      <field name="name">ihawc server</field>
+      <field name="model_id" ref="model_ihawc_ihawc"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="ihawc" id="ihawc.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="ihawc.menu_1" parent="ihawc.menu_root"/>
+    <menuitem name="Menu 2" id="ihawc.menu_2" parent="ihawc.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="players" id="ihawc.player_list" parent="ihawc.menu_1"
+              action="ihawc.action_player_window"/>
+
+  </data>
+</odoo>
