@@ -117,7 +117,7 @@ public class BoarManager : MonoBehaviour
 					switch (selectedToken.action)
                     {
                         case 0:							
-
+					
 							Attack(selectionX, selectionY);
                             break;
                         case 1:
@@ -836,7 +836,6 @@ public class BoarManager : MonoBehaviour
         activeTokens.Add(instantiate);
     }
 
-	//Spawn modificado para desarrollador
 	public void spawnToken(int typeToken, Text num)
 	{
 		int iNum = Int32.Parse(num.text);

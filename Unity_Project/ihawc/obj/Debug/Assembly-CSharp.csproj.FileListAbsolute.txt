@@ -315,3 +315,7 @@ D:\DEV\DevGames\Probes\Temp\bin\Debug\UnityEngine.TestRunner.pdb
 D:\DEV\DevGames\Probes\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\DEV\DevGames\Probes\obj\Debug\Assembly-CSharp.dll
 D:\DEV\DevGames\Probes\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Aharon\Desktop\Probes\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\Aharon\Desktop\Probes\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\Aharon\Desktop\Probes\obj\Debug\Assembly-CSharp.dll
+C:\Users\Aharon\Desktop\Probes\obj\Debug\Assembly-CSharp.pdb
